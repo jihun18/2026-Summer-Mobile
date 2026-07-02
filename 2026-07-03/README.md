@@ -90,7 +90,7 @@
   * **중합 컴포넌트 배치:** 중간의 미니 게임 배너는 가로 스크롤형 뷰로 구현하고, 하단의 '포인트숍 인기쿠폰' 영역은 `GridLayoutManager(context, 2)`를 활용해 2열 상품 카드로 안정감 있게 배치했습니다.
 * **화면 캡쳐:**
 
-<img width="1080" height="5168" alt="point_full" src="https://github.com/user-attachments/assets/2535f5e1-7fc9-41a6-8684-6514b01e64a7" />
+<img width="1080" alt="point_full" src="https://github.com/user-attachments/assets/2535f5e1-7fc9-41a6-8684-6514b01e64a7" />
 
 
 ---
@@ -105,7 +105,7 @@
   * **커스텀 아이템 뷰:** 각 레시피 카드는 요리 썸네일(둥근 모서리 처리), 제목, 별점, 인분 및 소요 시간 텍스트 뷰를 결합한 커스텀 레이아웃으로 설계되었습니다.
 * **화면 캡쳐:**
 
-<img width="1080" height="2204" alt="scrap_full" src="https://github.com/user-attachments/assets/06a8f499-7840-4121-bcb9-9adcb83166a4" />
+<img width="1080" alt="scrap_full" src="https://github.com/user-attachments/assets/06a8f499-7840-4121-bcb9-9adcb83166a4" />
 
 
 ---
@@ -121,7 +121,7 @@
   * **복합 메뉴 레이아웃 수립:** 상단 통계 수치(레시피 수, 스크랩 수 등)는 `LinearLayout(horizontal)`에 가중치(`weight`)를 주어 균등 분할 배정하고, 일반 설정 항목들은 가독성이 높은 목록형 뷰로 배치했습니다.
 * **화면 캡쳐:**
 
-<img width="1080" height="2204" alt="MY_full" src="https://github.com/user-attachments/assets/0b0831ba-745e-4860-8ce1-cff48b2ee537" />
+<img width="1080" alt="MY_full" src="https://github.com/user-attachments/assets/0b0831ba-745e-4860-8ce1-cff48b2ee537" />
 
 
 ---
