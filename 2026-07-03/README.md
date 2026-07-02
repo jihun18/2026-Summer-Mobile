@@ -62,7 +62,7 @@
   * **최하단 피드 영역:** 실시간 유저 요리 후기와 별점을 리스트 형태로 보여주는 세로 스크롤 `RecyclerView`
 * **화면 캡쳐:**
 
-<img width="540" alt="home_full" src="https://github.com/user-attachments/assets/8bbb9bda-6176-4e0e-8615-3ff5f094790e" />
+<img width="300" alt="home_full" src="https://github.com/user-attachments/assets/8bbb9bda-6176-4e0e-8615-3ff5f094790e" />
 
 ---
 
@@ -75,7 +75,7 @@
   * **데이터 필터링 연동:** 각 아이템(예: 밑반찬, 찌개 등) 클릭 시, 해당 카테고리 식별자(ID 또는 텍스트)를 다음 화면으로 전달하여 맞춤형 레시피 목록이 출력되도록 데이터 전달 아키텍처를 설계했습니다.
 * **화면 캡쳐:**
 
-<img width="1080" alt="category_full" src="https://github.com/user-attachments/assets/cb7ca6c1-82b7-487d-a1da-48b7fcdbc57e" />
+<img width="300" alt="category_full" src="https://github.com/user-attachments/assets/cb7ca6c1-82b7-487d-a1da-48b7fcdbc57e" />
 
 
 ---
@@ -90,7 +90,7 @@
   * **중합 컴포넌트 배치:** 중간의 미니 게임 배너는 가로 스크롤형 뷰로 구현하고, 하단의 '포인트숍 인기쿠폰' 영역은 `GridLayoutManager(context, 2)`를 활용해 2열 상품 카드로 안정감 있게 배치했습니다.
 * **화면 캡쳐:**
 
-<img width="1080" alt="point_full" src="https://github.com/user-attachments/assets/2535f5e1-7fc9-41a6-8684-6514b01e64a7" />
+<img width="300" alt="point_full" src="https://github.com/user-attachments/assets/2535f5e1-7fc9-41a6-8684-6514b01e64a7" />
 
 
 ---
@@ -105,7 +105,7 @@
   * **커스텀 아이템 뷰:** 각 레시피 카드는 요리 썸네일(둥근 모서리 처리), 제목, 별점, 인분 및 소요 시간 텍스트 뷰를 결합한 커스텀 레이아웃으로 설계되었습니다.
 * **화면 캡쳐:**
 
-<img width="1080" alt="scrap_full" src="https://github.com/user-attachments/assets/06a8f499-7840-4121-bcb9-9adcb83166a4" />
+<img width="300" alt="scrap_full" src="https://github.com/user-attachments/assets/06a8f499-7840-4121-bcb9-9adcb83166a4" />
 
 
 ---
@@ -121,7 +121,7 @@
   * **복합 메뉴 레이아웃 수립:** 상단 통계 수치(레시피 수, 스크랩 수 등)는 `LinearLayout(horizontal)`에 가중치(`weight`)를 주어 균등 분할 배정하고, 일반 설정 항목들은 가독성이 높은 목록형 뷰로 배치했습니다.
 * **화면 캡쳐:**
 
-<img width="1080" alt="MY_full" src="https://github.com/user-attachments/assets/0b0831ba-745e-4860-8ce1-cff48b2ee537" />
+<img width="300" alt="MY_full" src="https://github.com/user-attachments/assets/0b0831ba-745e-4860-8ce1-cff48b2ee537" />
 
 
 ---
