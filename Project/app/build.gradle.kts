@@ -6,15 +6,15 @@ android {
     viewBinding.enable = true
     namespace = "kr.hnu.ice.project"
     compileSdk {
-        version = release(36) {
-            minorApiLevel = 1
+        version = release(37) {
+            minorApiLevel = 0
         }
     }
 
     defaultConfig {
         applicationId = "kr.hnu.ice.project"
         minSdk = 29
-        targetSdk = 36
+        targetSdk = 37
         versionCode = 1
         versionName = "1.0"
 
