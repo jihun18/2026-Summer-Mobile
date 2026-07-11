@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- [구역 1] 상단 타이틀 바 -->
+    <RelativeLayout
+        android:id="@+id/toolbar_area"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingHorizontal="16dp">
+        <TextView
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="←"
+            android:textColor="#111111"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="장보기 메모"
+            android:textColor="#111111"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- [구역 2] 올리브 그린 입력 박스 -->
+    <LinearLayout
+        android:id="@+id/layout_input_area"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_below="@id/toolbar_area"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/shape_shopping_input_box"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp">
+
+        <EditText
+            android:id="@+id/et_memo_input"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="재료 또는 상품명을 입력하세요"
+            android:textColor="#222222"
+            android:textColorHint="#999999"
+            android:textSize="15sp"
+            android:inputType="text" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_add_memo"
+            android:layout_width="65dp"
+            android:layout_height="36dp"
+            android:background="#557733"
+            android:text="추가"
+            android:textColor="#FFFFFF"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 통합 스크롤 컨테이너 -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_input_area"
+        android:fillViewport="true"
+        android:layout_marginTop="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="40dp">
+
+            <!-- ======================================================== -->
+            <!-- SECTION 1: 미완료 장보기 목록 파트                          -->
+            <!-- ======================================================== -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="8dp">
+                <TextView
+                    android:id="@+id/tv_memo_title_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="장보기 목록 (0)"
+                    android:textColor="#111111"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/btn_clear_all_memo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="비우기"
+                    android:textColor="#111111"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1.5dp"
+                android:background="#111111"
+                android:layout_marginHorizontal="16dp" />
+
+            <!-- 상태 A: 진짜 텅 비었을 때 안내 뷰 -->
+            <LinearLayout
+                android:id="@+id/layout_empty_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:layout_marginVertical="40dp"
+                android:visibility="visible">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📝" android:textSize="56sp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="필요한 상품 또는\n자주 사는 상품을 미리 메모해 보세요!" android:textColor="#111111" android:textSize="15sp" android:textStyle="bold" android:gravity="center" android:lineSpacingExtra="4dp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="24dp" android:text="홈 화면에 바로가기 추가" android:textColor="#557733" android:textSize="14sp" android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- 상태 B: 추가는 되었으나 모두 체크 완료되어 완료 카트가 뜰 때 (이미지 2번 상태) -->
+            <LinearLayout
+                android:id="@+id/layout_all_completed_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:layout_marginVertical="36dp"
+                android:visibility="gone">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🛒" android:textSize="64sp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12dp" android:text="모든 재료를 구매 완료했어요!" android:textColor="#111111" android:textSize="15sp" android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- 실제 미완료 아이템들이 쌓이는 공간 (마진 최소화 밀착 세팅) -->
+            <LinearLayout
+                android:id="@+id/layout_memo_items_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                android:orientation="vertical" />
+
+            <TextView
+                android:id="@+id/tv_active_tip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                android:layout_marginTop="12dp"
+                android:text="• 재료를 체크하시면 해당 재료가 구매 완료 목록으로 이동됩니다"
+                android:textColor="#888888"
+                android:textSize="12sp"
+                android:visibility="gone"/>
+
+            <!-- ======================================================== -->
+            <!-- SECTION 2: 완료된 구매완료 목록 파트 (초기 숨김)               -->
+            <!-- ======================================================== -->
+            <LinearLayout
+                android:id="@+id/layout_completed_section_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:layout_marginBottom="8dp">
+                    <TextView
+                        android:id="@+id/tv_completed_title_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="구매완료 목록 (0)"
+                        android:textColor="#111111"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/btn_clear_all_completed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="비우기"
+                        android:textColor="#111111"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1.5dp"
+                    android:background="#111111"
+                    android:layout_marginHorizontal="16dp" />
+
+                <!-- 완료된 아이템 적재함 -->
+                <LinearLayout
+                    android:id="@+id/layout_completed_items_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:orientation="vertical" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:layout_marginTop="12dp"
+                    android:text="• 구매 완료 목록에서 체크를 해제하면 재료가 장보기 목록으로 복구됩니다"
+                    android:textColor="#888888"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</RelativeLayout>

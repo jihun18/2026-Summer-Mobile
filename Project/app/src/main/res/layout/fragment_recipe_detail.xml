@@ -93,18 +93,16 @@
                 <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="재료" android:textColor="#111111" android:textSize="17sp" android:textStyle="bold"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:text="재료 계량 안내 ➔" android:textColor="#444444" android:textSize="13sp"/></RelativeLayout>
                 <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="[ 마늘 양파 볶음밥 재료 ]" android:textColor="#111111" android:textStyle="bold" android:textSize="14sp" android:layout_marginBottom="8dp"/>
 
-                <!-- 하드코딩 데이터 테이블 구조화 -->
                 <RelativeLayout android:layout_width="match_parent" android:layout_height="40dp"><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center_vertical" android:text="양파" android:textColor="#333333"/><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_toLeftOf="@id/b1" android:layout_marginRight="32dp" android:gravity="center_vertical" android:text="1/2개" android:textColor="#888888"/><TextView android:id="@+id/b1" android:layout_width="60dp" android:layout_height="28dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:background="@drawable/shape_chip_gray" android:text="구매" android:gravity="center" android:textSize="12sp"/></RelativeLayout><View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F5F5F5"/>
                 <RelativeLayout android:layout_width="match_parent" android:layout_height="40dp"><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center_vertical" android:text="슬라이스 마늘" android:textColor="#333333"/><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_toLeftOf="@id/b2" android:layout_marginRight="32dp" android:gravity="center_vertical" android:text="10개" android:textColor="#888888"/><TextView android:id="@+id/b2" android:layout_width="60dp" android:layout_height="28dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:background="@drawable/shape_chip_gray" android:text="구매" android:gravity="center" android:textSize="12sp"/></RelativeLayout><View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F5F5F5"/>
                 <RelativeLayout android:layout_width="match_parent" android:layout_height="40dp"><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center_vertical" android:text="밥" android:textColor="#333333"/><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_toLeftOf="@id/b3" android:layout_marginRight="32dp" android:gravity="center_vertical" android:text="1.5공기" android:textColor="#888888"/><TextView android:id="@+id/b3" android:layout_width="60dp" android:layout_height="28dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:background="@drawable/shape_chip_gray" android:text="구매" android:gravity="center" android:textSize="12sp"/></RelativeLayout><View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F5F5F5"/>
-                <RelativeLayout android:layout_width="match_parent" android:layout_height="40dp"><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center_vertical" android:text="올리브오일" android:textColor="#333333"/><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_toLeftOf="@id/b4" android:layout_marginRight="32dp" android:gravity="center_vertical" android:text="1큰술" android:textColor="#888888"/><TextView android:id="@+id/b4" android:layout_width="60dp" android:layout_height="28dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:background="@drawable/shape_chip_gray" android:text="구매" android:gravity="center" android:textSize="12sp"/></RelativeLayout><View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F5F5F5"/>
+                <RelativeLayout android:layout_width="match_parent" android:layout_height="40dp"><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center_vertical" android:text="올리브오일" android:textColor="#333333"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_toLeftOf="@id/b4" android:layout_marginRight="32dp" android:gravity="center_vertical" android:text="1큰술" android:textColor="#888888"/><TextView android:id="@+id/b4" android:layout_width="60dp" android:layout_height="28dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:background="@drawable/shape_chip_gray" android:text="구매" android:gravity="center" android:textSize="12sp"/></RelativeLayout><View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F5F5F5"/>
                 <RelativeLayout android:layout_width="match_parent" android:layout_height="40dp"><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center_vertical" android:text="간장" android:textColor="#333333"/><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_toLeftOf="@id/b5" android:layout_marginRight="32dp" android:gravity="center_vertical" android:text="1큰술" android:textColor="#888888"/><TextView android:id="@+id/b5" android:layout_width="60dp" android:layout_height="28dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:background="@drawable/shape_chip_gray" android:text="구매" android:gravity="center" android:textSize="12sp"/></RelativeLayout>
 
                 <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="[ 선택재료 ]" android:textColor="#111111" android:textStyle="bold" android:textSize="14sp" android:layout_marginTop="16dp" android:layout_marginBottom="8dp"/>
                 <RelativeLayout android:layout_width="match_parent" android:layout_height="40dp"><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center_vertical" android:text="달걀" android:textColor="#333333"/><TextView android:layout_width="60dp" android:layout_height="28dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:background="@drawable/shape_chip_gray" android:text="구매" android:gravity="center" android:textSize="12sp"/></RelativeLayout>
                 <RelativeLayout android:layout_width="match_parent" android:layout_height="40dp"><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center_vertical" android:text="닭가슴살" android:textColor="#333333"/><TextView android:layout_width="60dp" android:layout_height="28dp" android:layout_alignParentRight="true" android:layout_centerVertical="true" android:background="@drawable/shape_chip_gray" android:text="구매" android:gravity="center" android:textSize="12sp"/></RelativeLayout>
 
-                <!-- 이미지 2 & 3 연동: 재료 관련제품 가로 스와이프 리스트 -->
                 <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="재료 관련제품" android:textColor="#111111" android:textStyle="bold" android:textSize="15sp" android:layout_marginTop="24dp" android:layout_marginBottom="12dp"/>
                 <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content" android:scrollbars="none">
                     <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
@@ -115,7 +113,7 @@
                 </HorizontalScrollView>
             </LinearLayout>
 
-            <!-- 이미지 3 구역: 노하우 영상 탭 목록 -->
+            <!-- 노하우 영상 구역 -->
             <View android:layout_width="match_parent" android:layout_height="8dp" android:background="#F4F5F6" />
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
                 <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="노하우" android:textColor="#111111" android:textSize="16sp" android:textStyle="bold"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:text="더보기" android:textColor="#888888" android:textSize="13sp"/></RelativeLayout>
@@ -127,31 +125,23 @@
                 </HorizontalScrollView>
             </LinearLayout>
 
-            <!-- 이미지 3 & 4 구역: 정밀 조리순서 매뉴얼 (Step 1 ~ Step 7) -->
+            <!-- 조리순서 매뉴얼 (Step 1 ~ Step 7) -->
             <View android:layout_width="match_parent" android:layout_height="8dp" android:background="#F4F5F6" />
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
                 <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="조리순서" android:textColor="#111111" android:textSize="17sp" android:textStyle="bold"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignParentRight="true" android:text="🎚️ ▦ ☰ | 원문 | 전체" android:textColor="#888888" android:textSize="12sp"/></RelativeLayout>
 
-                <!-- Step 1 -->
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="20dp"><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical"><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="1. 팬에 올리브오일 1 큰 술 넣는다. 채 썬 양파 반 개와 슬라이스 마늘 10개 볶는다." android:textColor="#222222" android:textStyle="bold" android:textSize="14sp" android:lineSpacingExtra="4dp"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="• 중불" android:textColor="#888888" android:textSize="12sp"/></LinearLayout><View android:layout_width="110dp" android:layout_height="85dp" android:layout_marginLeft="12dp" android:background="#D1F2EB"/></LinearLayout>
-                <!-- Step 2 -->
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="20dp"><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical"><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2. 갈색빛이 돌 때까지 볶는다. 캐러멜라이징 한다." android:textColor="#222222" android:textStyle="bold" android:textSize="14sp" android:lineSpacingExtra="4dp"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="• 센 불에 하면 탈 수 있으니 중약불에서 볶아 준다." android:textColor="#888888" android:textSize="12sp"/></LinearLayout><View android:layout_width="110dp" android:layout_height="85dp" android:layout_marginLeft="12dp" android:background="#FCF3CF"/></LinearLayout>
-                <!-- Step 3 -->
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="20dp"><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical"><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="3. 간장 1 큰 술을 넣어준다." android:textColor="#222222" android:textStyle="bold" android:textSize="14sp"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="• 간장을 넣으면 불 맛이 나고 간이 맞는다." android:textColor="#888888" android:textSize="12sp"/></LinearLayout><View android:layout_width="110dp" android:layout_height="85dp" android:layout_marginLeft="12dp" android:background="#F5CBA7"/></LinearLayout>
-                <!-- Step 4 -->
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="20dp"><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical"><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="4. 밥 1.5공기 넣어주고 굴소스 1 작은 술 넣는다." android:textColor="#222222" android:textStyle="bold" android:textSize="14sp" android:lineSpacingExtra="4dp"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="• 굴 소스는 감칠맛을 내기 위함이다. 굴 소스가 없다면 간장을 1 작은 술 추가로 넣는다." android:textColor="#888888" android:textSize="12sp"/></LinearLayout><View android:layout_width="110dp" android:layout_height="85dp" android:layout_marginLeft="12dp" android:background="#FADBD8"/></LinearLayout>
-                <!-- Step 5 -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="20dp"><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical"><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="4. 밥 1.5공기 넣어주고 굴소스 1 작은 술 넣는다." android:textColor="#222222" android:textStyle="bold" android:textSize="14sp" android:lineSpacingExtra="4dp"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="• 굴 소스는 감칠맛을 내기 위함이다. 굴 소스가 없다면 간장을 1 작은 술 추가로 넣는다." android:textColor="#888888" android:textSize="12sp"/></LinearLayout><View android:layout_width="110dp" android:layout_height="85dp" android:layout_marginLeft="12dp" android:background="#F5EEF8"/></LinearLayout>
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="20dp"><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical"><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="5. 양파, 마늘, 양념과 밥이 잘 섞이도록 볶는다. 팬에 넓게 펴주고 마무리한다." android:textColor="#222222" android:textStyle="bold" android:textSize="14sp" android:lineSpacingExtra="4dp"/></LinearLayout><View android:layout_width="110dp" android:layout_height="85dp" android:layout_marginLeft="12dp" android:background="#E8F8F5"/></LinearLayout>
-                <!-- Step 6 -->
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="20dp"><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical"><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="6. 계란프라이 1개와 구운 닭가슴살을 그릇에 올린다." android:textColor="#222222" android:textStyle="bold" android:textSize="14sp" android:lineSpacingExtra="4dp"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="• 부침 두부가 있어 1조각 올려 주었다." android:textColor="#888888" android:textSize="12sp"/></LinearLayout><View android:layout_width="110dp" android:layout_height="85dp" android:layout_marginLeft="12dp" android:background="#EAECEE"/></LinearLayout>
-                <!-- Step 7 -->
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp"><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical"><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="7. 밥에 깨 약간 후추 약간 뿌려 마무리한다." android:textColor="#222222" android:textStyle="bold" android:textSize="14sp"/></LinearLayout><View android:layout_width="110dp" android:layout_height="85dp" android:layout_marginLeft="12dp" android:background="#F5EEF8"/></LinearLayout>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginBottom="16dp"><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical"><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="7. 밥에 깨 약간 후추 약간 뿌려 마무리한다." android:textColor="#222222" android:textStyle="bold" android:textSize="14sp"/></LinearLayout><View android:layout_width="110dp" android:layout_height="85dp" android:layout_marginLeft="12dp" android:background="#FADBD8"/></LinearLayout>
 
-                <!-- COOK TIP 박스 명세 -->
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/shape_search_background" android:backgroundTint="#F2F4F4" android:orientation="vertical" android:padding="14dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="COOK TIP" android:textColor="#27AE60" android:textStyle="bold" android:textSize="14sp"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="칼로리와 맛 모두 잡은 식사입니다." android:textColor="#555555" android:textSize="13sp" android:textStyle="italic"/></LinearLayout>
             </LinearLayout>
 
-            <!-- 이미지 5 구역: 추가 레시피 관련제품 + 후기 토글 바 -->
+            <!-- 후기 및 댓글 토글 구역 -->
             <View android:layout_width="match_parent" android:layout_height="8dp" android:background="#F4F5F6" />
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:padding="16dp">
                 <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="레시피 관련제품" android:textColor="#111111" android:textStyle="bold" android:textSize="15sp" android:layout_marginBottom="12dp"/>
@@ -159,7 +149,6 @@
                     <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
                         <LinearLayout android:layout_width="120dp" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginRight="12dp"><View android:layout_width="match_parent" android:layout_height="100dp" android:background="#C8E6C9"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="황보 혼합야채 4종" android:textSize="12sp" android:maxLines="1"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="3,900원" android:textStyle="bold" android:textColor="#E64A19" android:textSize="13sp"/></LinearLayout>
                         <LinearLayout android:layout_width="120dp" android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginRight="12dp"><View android:layout_width="match_parent" android:layout_height="100dp" android:background="#B3E5FC"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="냉동 혼합야채 1kg" android:textSize="12sp" android:maxLines="1"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="11,500원" android:textStyle="bold" android:textColor="#E64A19" android:textSize="13sp"/></LinearLayout>
-                        <LinearLayout android:layout_width="120dp" android:layout_height="wrap_content" android:orientation="vertical"><View android:layout_width="match_parent" android:layout_height="100dp" android:background="#D1C4E9"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="천일 햄야채볶음밥" android:textSize="12sp" android:maxLines="1"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="14,400원" android:textStyle="bold" android:textColor="#E64A19" android:textSize="13sp"/></LinearLayout>
                     </LinearLayout>
                 </HorizontalScrollView>
             </LinearLayout>
@@ -169,32 +158,21 @@
 
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical" android:padding="16dp"><TextView android:layout_width="64dp" android:layout_height="40dp" android:background="#FFB300" android:text="4.8" android:textColor="#FFFFFF" android:gravity="center" android:textStyle="bold" android:textSize="18sp" android:layout_marginRight="12dp"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⭐⭐⭐⭐⭐" android:textSize="22sp"/></LinearLayout>
 
-            <!-- 포토 후기 미니어처 Row -->
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="포토 후기" android:textStyle="bold" android:textSize="14sp" android:paddingHorizontal="16dp" android:layout_marginBottom="8dp"/>
-            <LinearLayout android:layout_width="match_parent" android:layout_height="80dp" android:orientation="horizontal" android:paddingHorizontal="16dp" android:layout_marginBottom="16dp"><View android:layout_width="80dp" android:layout_height="match_parent" android:background="#E0F2F1" android:layout_marginRight="8dp"/><View android:layout_width="80dp" android:layout_height="match_parent" android:background="#FFF3E0"/></LinearLayout>
-
-            <!-- 이미지 5 & 6 구역: 댓글 및 셰프의 한마디 말풍선 결합 컴포넌트 -->
+            <!-- 포토 리뷰 상자 존 -->
             <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingHorizontal="16dp">
-                <!-- 리뷰 1 -->
+                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="포토 후기" android:textStyle="bold" android:textSize="14sp" android:layout_marginBottom="8dp"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="80dp" android:orientation="horizontal" android:layout_marginBottom="16dp"><View android:layout_width="80dp" android:layout_height="match_parent" android:background="#E0F2F1" android:layout_marginRight="8dp"/><View android:layout_width="80dp" android:layout_height="match_parent" android:background="#FFF3E0"/></LinearLayout>
+
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"><View android:layout_width="28dp" android:layout_height="28dp" android:background="@drawable/shape_circle" android:backgroundTint="#FF8A80"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:text="젤리" android:textStyle="bold"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6dp" android:text="⭐⭐⭐⭐⭐" android:textSize="10sp"/></LinearLayout>
                 <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="36dp" android:layout_marginTop="4dp" android:text="다이어트 중에 먹기도 좋고요~ 맛도 있어요 ~~~\n잘해먹었습니다 ^^~~" android:textColor="#222222" android:textSize="13sp"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="36dp" android:text="2025.09.25" android:textColor="#BBBBBB" android:textSize="11sp" android:layout_marginBottom="12dp"/>
 
-                <!-- 리뷰 2 + 셰프 대댓글 말풍선 -->
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"><View android:layout_width="28dp" android:layout_height="28dp" android:background="@drawable/shape_circle" android:backgroundTint="#80DEEA"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:text="🧼'▼'🧼" android:textStyle="bold"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6dp" android:text="⭐⭐⭐⭐⭐" android:textSize="10sp"/></LinearLayout>
                 <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="36dp" android:layout_marginTop="4dp" android:text="잘먹었어용 레시피 감사합니다 ^,^" android:textColor="#222222" android:textSize="13sp"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="36dp" android:text="2023.06.28" android:textColor="#BBBBBB" android:textSize="11sp"/>
 
-                <!-- 셰프의 한마디 캡슐 말풍선 -->
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/shape_search_background" android:backgroundTint="#F2F3F4" android:layout_marginLeft="36dp" android:layout_marginTop="8dp" android:layout_marginBottom="16dp" android:orientation="vertical" android:padding="12dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="셰프의 한마디" android:textColor="#333333" android:textStyle="bold" android:textSize="12sp"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="맛있게 드셨다니 기쁘네요!! 사진까지 남겨주시니 감사합니다. *^*" android:textColor="#555555" android:textSize="13sp"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2023.07.10" android:textColor="#AAAAAA" android:textSize="10sp"/></LinearLayout>
-
-                <!-- 리뷰 3 + 셰프 대댓글 -->
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"><View android:layout_width="28dp" android:layout_height="28dp" android:background="@drawable/shape_circle" android:backgroundTint="#C5CAE9"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:text="수딩" android:textStyle="bold"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6dp" android:text="⭐⭐⭐⭐⭐" android:textSize="10sp"/></LinearLayout>
-                <TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="36dp" android:layout_marginTop="4dp" android:text="요거 맛나게 잘 먹었어요~~~~! 급하게 먹느라 사진은 없지만 ㅠㅠ 간단하게 먹을때 자주 먹게될듯요 ㅎ" android:textColor="#222222" android:textSize="13sp"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="36dp" android:text="2023.06.01" android:textColor="#BBBBBB" android:textSize="11sp"/>
-
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/shape_search_background" android:backgroundTint="#F2F3F4" android:layout_marginLeft="36dp" android:layout_marginTop="8dp" android:layout_marginBottom="24dp" android:orientation="vertical" android:padding="12dp"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="셰프의 한마디" android:textColor="#333333" android:textStyle="bold" android:textSize="12sp"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="수딩님 감사합니다!! 입맛에 맞으셨다니 기쁘네요 저도 자주 해먹는 밥이랍니다 ㅎㅎ" android:textColor="#555555" android:textSize="13sp"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="2023.06.11" android:textColor="#AAAAAA" android:textSize="10sp"/></LinearLayout>
 
                 <TextView android:layout_width="match_parent" android:layout_height="44dp" android:background="@drawable/shape_btn_border_green" android:backgroundTint="#FFFFFF" android:gravity="center" android:text="4개의 후기 전체보기 ➔" android:textColor="#555555" android:textStyle="bold" android:layout_marginBottom="24dp"/>
 
-                <!-- 응원 카드 뷰 복사 마감 -->
                 <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:background="@drawable/shape_search_background" android:backgroundTint="#F8F9F9" android:orientation="vertical" android:padding="16dp" android:gravity="center_horizontal" android:layout_marginBottom="24dp">
                     <View android:layout_width="48dp" android:layout_height="48dp" android:background="@drawable/shape_circle" android:backgroundTint="#F4D03F" android:layout_marginBottom="8dp"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="쿠킹천국" android:textStyle="bold" android:textColor="#111111" android:textSize="15sp"/>
@@ -205,19 +183,286 @@
                     </LinearLayout>
                 </LinearLayout>
 
-                <!-- 최하단 태그 칩 그룹 존 마감 -->
                 <com.google.android.material.chip.ChipGroup
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:chipSpacingHorizontal="6dp"
-                    app:chipSpacingVertical="6dp">
+                    app:chipSpacingVertical="6dp"
+                    android:layout_marginBottom="24dp">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="10dp" android:paddingVertical="5dp" android:text="볶음밥" android:textSize="12sp" android:textColor="#666666"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="10dp" android:paddingVertical="5dp" android:text="밥" android:textSize="12sp" android:textColor="#666666"/>
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="10dp" android:paddingVertical="5dp" android:text="다이어트" android:textSize="12sp" android:textColor="#666666"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="10dp" android:paddingVertical="5dp" android:text="양파요리" android:textSize="12sp" android:textColor="#666666"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="10dp" android:paddingVertical="5dp" android:text="닭가슴살" android:textSize="12sp" android:textColor="#666666"/>
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="10dp" android:paddingVertical="5dp" android:text="일상" android:textSize="12sp" android:textColor="#666666"/>
                 </com.google.android.material.chip.ChipGroup>
+            </LinearLayout>
+
+            <!-- ======================================================== -->
+            <!-- ★ [신규 추가 구역] 이미지 6 스펙: 라면땅 맛보장 레시피 2x2 격자판 -->
+            <!-- ======================================================== -->
+            <View android:layout_width="match_parent" android:layout_height="8dp" android:background="#F4F5F6" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="라면땅 "
+                            android:textColor="#E64A19"
+                            android:textStyle="bold"
+                            android:textSize="17sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="맛보장 레시피"
+                            android:textColor="#111111"
+                            android:textStyle="bold"
+                            android:textSize="17sp" />
+                    </LinearLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerInParent="true"
+                        android:text="더보기"
+                        android:textColor="#BBBBBB"
+                        android:textSize="13sp" />
+                </RelativeLayout>
+
+                <!-- 2컬럼 균등 가로 분할 격자판 -->
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:columnCount="2">
+
+                    <!-- 라면땅 1번 카드 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:orientation="vertical"
+                        android:padding="6dp">
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="135dp">
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="0dp">
+                                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="#CFD8DC"/>
+                            </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="22dp"
+                                android:layout_height="26dp"
+                                android:background="#E64A19"
+                                android:text="1"
+                                android:textColor="#FFFFFF"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:textSize="13sp"/>
+                        </FrameLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="초간단 야식 전자렌지로 바삭한 라면땅 만들기"
+                            android:textColor="#222222"
+                            android:textStyle="bold"
+                            android:textSize="13sp"
+                            android:maxLines="2"
+                            android:ellipsize="end"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="쿡팁"
+                            android:textColor="#888888"
+                            android:textSize="11sp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="★ 4.9 (61)"
+                            android:textColor="#FFB300"
+                            android:textStyle="bold"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <!-- 라면땅 2번 카드 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:orientation="vertical"
+                        android:padding="6dp">
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="135dp">
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="0dp">
+                                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="#CFD8DC"/>
+                            </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="22dp"
+                                android:layout_height="26dp"
+                                android:background="#E64A19"
+                                android:text="2"
+                                android:textColor="#FFFFFF"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:textSize="13sp"/>
+                        </FrameLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="[간단 자취요리] 바삭달달! 추억의 라면땅 만들기"
+                            android:textColor="#222222"
+                            android:textStyle="bold"
+                            android:textSize="13sp"
+                            android:maxLines="2"
+                            android:ellipsize="end"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="얌무"
+                            android:textColor="#888888"
+                            android:textSize="11sp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="★ 4.7 (22)"
+                            android:textColor="#FFB300"
+                            android:textStyle="bold"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <!-- 라면땅 3번 카드 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:orientation="vertical"
+                        android:padding="6dp"
+                        android:layout_marginTop="8dp">
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="135dp">
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="0dp">
+                                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="#CFD8DC"/>
+                            </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="22dp"
+                                android:layout_height="26dp"
+                                android:background="#E64A19"
+                                android:text="3"
+                                android:textColor="#FFFFFF"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:textSize="13sp"/>
+                        </FrameLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="바삭! 달콤! 인기 간식♥ 라면땅"
+                            android:textColor="#222222"
+                            android:textStyle="bold"
+                            android:textSize="13sp"
+                            android:maxLines="2"
+                            android:ellipsize="end"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="만개의레시피"
+                            android:textColor="#888888"
+                            android:textSize="11sp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="★ 4.8 (18)"
+                            android:textColor="#FFB300"
+                            android:textStyle="bold"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                    <!-- 라면땅 4번 카드 -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_columnWeight="1"
+                        android:orientation="vertical"
+                        android:padding="6dp"
+                        android:layout_marginTop="8dp">
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="135dp">
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                app:cardCornerRadius="8dp"
+                                app:cardElevation="0dp">
+                                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="#CFD8DC"/>
+                            </androidx.cardview.widget.CardView>
+                            <TextView
+                                android:layout_width="22dp"
+                                android:layout_height="26dp"
+                                android:background="#E64A19"
+                                android:text="4"
+                                android:textColor="#FFFFFF"
+                                android:gravity="center"
+                                android:textStyle="bold"
+                                android:textSize="13sp"/>
+                        </FrameLayout>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:text="추억 소환하러 가자!!!! 분식집 라면땅 ★"
+                            android:textColor="#222222"
+                            android:textStyle="bold"
+                            android:textSize="13sp"
+                            android:maxLines="2"
+                            android:ellipsize="end"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="만개의레시피"
+                            android:textColor="#888888"
+                            android:textSize="11sp"/>
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="★ 5.0 (14)"
+                            android:textColor="#FFB300"
+                            android:textStyle="bold"
+                            android:textSize="12sp"/>
+                    </LinearLayout>
+
+                </GridLayout>
             </LinearLayout>
 
         </LinearLayout>

@@ -22,7 +22,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="12dp">
 
-            <!-- ★ [ID 추가 완료] 이 박스를 누르면 통합검색화면으로 전환됩니다 -->
+            <!-- 통합검색화면 진입용 컨테이너 -->
             <LinearLayout
                 android:id="@+id/layout_search_bar_container"
                 android:layout_width="0dp"
@@ -127,10 +127,10 @@
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="출석\n포인트" android:gravity="center" android:textColor="#333333" android:textSize="12sp" />
             </LinearLayout>
 
-            <!-- 4. 장보기 메모 -->
-            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <!-- ★ 4. 장보기 메모 [연동 ID 및 피드백 주입 완료] -->
+            <LinearLayout android:id="@+id/btn_go_shopping_memo" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:foreground="?android:attr/selectableItemBackground">
                 <ImageView android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/ic_shopmemo" />
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="장보기\n메모" android:gravity="center" android:textColor="#333333" android:textSize="12sp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="장보기\n메모" android:gravity="center" android:textColor="#333333" android:textStyle="bold" android:textSize="12sp" />
             </LinearLayout>
 
             <!-- 5. 할인정보 -->

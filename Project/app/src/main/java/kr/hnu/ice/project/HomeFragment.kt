@@ -80,6 +80,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 .addToBackStack(null) // 뒤로가기 누르면 다시 홈으로 복귀 가능하게 적재
                 .commit()
         }
+
+        binding.btnGoShoppingMemo.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.main_fragment_container, ShoppingMemoFragment())
+                .addToBackStack(null) // 뒤로가기 누르면 다시 홈으로 리턴 연동
+                .commit()
+        }
     }
 
     override fun onDestroyView() {

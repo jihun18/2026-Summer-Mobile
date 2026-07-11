@@ -29,6 +29,13 @@ class MyFragment : Fragment() {
         binding.btnRegisterRecipe.setOnClickListener {
             Toast.makeText(context, "나만의 명품 레시피 등록 기능이 활성화됩니다!", Toast.LENGTH_SHORT).show()
         }
+
+        binding.btnRecentRecipes.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.main_fragment_container, RecentViewFragment())
+                .addToBackStack(null) // 뒤로가기 누르면 다시 마이페이지로 스무스하게 복귀 가능
+                .commit()
+        }
     }
 
     override fun onDestroyView() {
