@@ -1,11 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="24sp"
-        android:text="스크랩 화면" />
-</FrameLayout>
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- [구역 1] 최상단 커스텀 탭 헤더 영역 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        android:gravity="center_vertical">
+
+        <!-- 전체 탭 버튼 -->
+        <RelativeLayout
+            android:id="@+id/tab_total"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true">
+            <TextView
+                android:id="@+id/tv_tab_total"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="전체(1)"
+                android:textColor="#111111"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+            <View
+                android:id="@+id/indicator_total"
+                android:layout_width="60dp"
+                android:layout_height="3dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#70A150" /> <!-- 스크랩 강조용 시그니처 바 -->
+        </RelativeLayout>
+
+        <!-- 내폴더 탭 버튼 -->
+        <RelativeLayout
+            android:id="@+id/tab_folder"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true">
+            <TextView
+                android:id="@+id/tv_tab_folder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="내폴더(2)"
+                android:textColor="#888888"
+                android:textSize="16sp" />
+            <View
+                android:id="@+id/indicator_folder"
+                android:layout_width="60dp"
+                android:layout_height="3dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#70A150"
+                android:visibility="invisible" /> <!-- 초기 상태는 비활성화 -->
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EFEFEF" />
+
+    <!-- [구역 2] 컨텐츠 적재용 특수 컨테이너 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- [화면 A] 전체(1) 활성화 상태의 레시피 리스트 레이아웃 -->
+        <LinearLayout
+            android:id="@+id/layout_scrap_total"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:visibility="visible">
+
+            <!-- 스크랩 카드 행 (양파볶음밥 단독) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="110dp"
+                    android:layout_height="110dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp">
+                    <!-- 임시 볶음밥 색상 플레이스홀더 박스 -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="#F5D0A9" />
+                </androidx.cardview.widget.CardView>
+
+                <!-- 우측 설명 메타상자 -->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="14dp">
+                    <TextView
+                        android:id="@+id/tv_recipe_sub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="양파볶음밥"
+                        android:textColor="#557733"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/tv_recipe_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_recipe_sub"
+                        android:layout_marginTop="2dp"
+                        android:text="다이어트 식단 표에 넣기\n좋은 원팬 양파 볶음밥"
+                        android:textColor="#111111"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="3dp" />
+                    <LinearLayout
+                        android:id="@+id/layout_stars"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_recipe_title"
+                        android:layout_marginTop="4dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="★ 4.8"
+                            android:textColor="#FFB300"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" (4) · 코난"
+                            android:textColor="#888888"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/layout_stars"
+                        android:layout_marginTop="6dp"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/shape_chip_gray"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="3dp"
+                            android:text="👤 2인분"
+                            android:textColor="#555555"
+                            android:textSize="11sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="6dp"
+                            android:background="@drawable/shape_chip_gray"
+                            android:paddingHorizontal="8dp"
+                            android:paddingVertical="3dp"
+                            android:text="⏱️ 10분"
+                            android:textColor="#555555"
+                            android:textSize="11sp" />
+                    </LinearLayout>
+                    <!-- 우하단 눈 모양 인디케이터 -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:text="👁️"
+                        android:textColor="#888888"
+                        android:textSize="15sp" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- [화면 B] 내폴더(2) 활성화 상태의 새폴더 목록 레이아웃 -->
+        <LinearLayout
+            android:id="@+id/layout_scrap_folder"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone"> <!-- 초기엔 숨겨둠 -->
+
+            <!-- 초록색 [새폴더] 추가 액션 상자 -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_add_folder"
+                    android:layout_width="110dp"
+                    android:layout_height="36dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="#70A150"
+                    android:text="새폴더"
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EFEFEF" />
+
+            <!-- 로우 1: 전체 (1) -->
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="64dp" android:paddingHorizontal="16dp" android:background="#FFFFFF"><TextView android:id="@+id/f_ic1" android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center" android:text="📁" android:textSize="24sp" /><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_toRightOf="@id/f_ic1" android:layout_marginLeft="14dp" android:gravity="center_vertical" android:text="전체 (1)" android:textColor="#222222" android:textSize="15sp" /></RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EFEFEF" android:layout_marginHorizontal="16dp" />
+
+            <!-- 로우 2: 기본폴더 (0) -->
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="64dp" android:paddingHorizontal="16dp" android:background="#FFFFFF"><TextView android:id="@+id/f_ic2" android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center" android:text="📁" android:textSize="24sp" /><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_toRightOf="@id/f_ic2" android:layout_marginLeft="14dp" android:gravity="center_vertical" android:text="기본폴더 (0)" android:textColor="#222222" android:textSize="15sp" /><LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_alignParentRight="true" android:orientation="horizontal" android:gravity="center_vertical"><TextView android:layout_width="32dp" android:layout_height="match_parent" android:text="⋮" android:gravity="center" android:textColor="#888888" android:textSize="18sp"/><TextView android:layout_width="32dp" android:layout_height="match_parent" android:text="⇅" android:gravity="center" android:textColor="#888888" android:textSize="16sp"/></LinearLayout></RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EFEFEF" android:layout_marginHorizontal="16dp" />
+
+            <!-- 로우 3: 한끼 (1) -->
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="64dp" android:paddingHorizontal="16dp" android:background="#FFFFFF"><TextView android:id="@+id/f_ic3" android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center" android:text="📁" android:textSize="24sp" /><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_toRightOf="@id/f_ic3" android:layout_marginLeft="14dp" android:gravity="center_vertical" android:text="한끼 (1)" android:textColor="#222222" android:textSize="15sp" /><LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_alignParentRight="true" android:orientation="horizontal" android:gravity="center_vertical"><TextView android:layout_width="32dp" android:layout_height="match_parent" android:text="⋮" android:gravity="center" android:textColor="#888888" android:textSize="18sp"/><TextView android:layout_width="32dp" android:layout_height="match_parent" android:text="⇅" android:gravity="center" android:textColor="#888888" android:textSize="16sp"/></LinearLayout></RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EFEFEF" android:layout_marginHorizontal="16dp" />
+
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

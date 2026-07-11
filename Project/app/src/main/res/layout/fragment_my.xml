@@ -1,11 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#F5F6F7"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="24sp"
-        android:text="MY 화면" />
-</FrameLayout>
+        android:orientation="vertical"
+        android:paddingBottom="40dp">
+
+        <!-- [구역 1] 최상단 웅장한 다크 슬레이트 프로필 배너 상자 -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:background="#2E3D46"
+            android:paddingHorizontal="24dp"
+            android:paddingTop="28dp">
+
+            <!-- 원형 프로필 홀더 (CardView 활용) -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/profile_avatar_box"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                app:cardCornerRadius="36dp"
+                app:cardElevation="0dp">
+                <!-- 아바타 플레이스홀더 이모지 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#BAC9D2"
+                    android:gravity="center"
+                    android:text="👤"
+                    android:textSize="36sp" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- 사용자 텍스트 메타 정보 (전지훈님 매칭) -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/profile_avatar_box"
+                android:layout_marginLeft="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="전지훈"
+                    android:textColor="#FFFFFF"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="팔로워 0  팔로잉 0"
+                    android:textColor="#BAC9D2"
+                    android:textSize="13sp" />
+
+                <!-- 레시피 등록 투명 초록 테두리 캡슐 버튼 -->
+                <TextView
+                    android:id="@+id/btn_register_recipe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape_btn_border_green"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="5dp"
+                    android:text="레시피 등록"
+                    android:textColor="#69C074"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- [구역 2] 레시피 가로형 4대 활동 데이터 대시보드 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="vertical"
+            android:paddingVertical="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="12dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="레시피"
+                    android:textColor="#111111"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="더보기"
+                    android:textColor="#888888"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="4">
+
+                <!-- 1. 내가 본 레시피 -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="👁️" android:textSize="20sp" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="내가 본 레시피" android:textColor="#444444" android:textSize="12sp" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="1" android:textColor="#A27D54" android:textStyle="bold" android:textSize="13sp" /></LinearLayout>
+                <!-- 2. 스크랩 -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🔖" android:textSize="20sp" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="스크랩" android:textColor="#444444" android:textSize="12sp" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="1" android:textColor="#A27D54" android:textStyle="bold" android:textSize="13sp" /></LinearLayout>
+                <!-- 3. 요리후기 -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📝" android:textSize="20sp" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="요리후기" android:textColor="#444444" android:textSize="12sp" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="0" android:textColor="#888888" android:textSize="13sp" /></LinearLayout>
+                <!-- 4. 노트 -->
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📓" android:textSize="20sp" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="노트" android:textColor="#444444" android:textSize="12sp" /><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="0" android:textColor="#888888" android:textSize="13sp" /></LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- [구역 3] 수직 리스트형 메인 제어 메뉴 목록 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="52dp" android:paddingHorizontal="16dp"><TextView android:id="@+id/m_ic1" android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center" android:text="🔔" android:textSize="18sp" /><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_toRightOf="@id/m_ic1" android:layout_marginLeft="14dp" android:gravity="center_vertical" android:text="알림" android:textColor="#222222" android:textSize="15sp" /></RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F2F3F4" android:layout_marginHorizontal="16dp" />
+
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="52dp" android:paddingHorizontal="16dp"><TextView android:id="@+id/m_ic2" android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center" android:text="🎁" android:textSize="18sp" /><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_toRightOf="@id/m_ic2" android:layout_marginLeft="14dp" android:gravity="center_vertical" android:text="이벤트" android:textColor="#222222" android:textSize="15sp" /></RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F2F3F4" android:layout_marginHorizontal="16dp" />
+
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="52dp" android:paddingHorizontal="16dp"><TextView android:id="@+id/m_ic3" android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center" android:text="💬" android:textSize="18sp" /><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_toRightOf="@id/m_ic3" android:layout_marginLeft="14dp" android:gravity="center_vertical" android:text="문의하기" android:textColor="#222222" android:textSize="15sp" /></RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F2F3F4" android:layout_marginHorizontal="16dp" />
+
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="52dp" android:paddingHorizontal="16dp"><TextView android:id="@+id/m_ic4" android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center" android:text="Ⓟ" android:textColor="#FFB300" android:textStyle="bold" android:textSize="18sp" /><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_toRightOf="@id/m_ic4" android:layout_marginLeft="14dp" android:gravity="center_vertical" android:text="광고제거" android:textColor="#222222" android:textSize="15sp" /></RelativeLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F2F3F4" android:layout_marginHorizontal="16dp" />
+
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="52dp" android:paddingHorizontal="16dp"><TextView android:id="@+id/m_ic5" android:layout_width="wrap_content" android:layout_height="match_parent" android:gravity="center" android:text="⚙️" android:textSize="18sp" /><TextView android:layout_width="wrap_content" android:layout_height="match_parent" android:layout_toRightOf="@id/m_ic5" android:layout_marginLeft="14dp" android:gravity="center_vertical" android:text="설정" android:textColor="#222222" android:textSize="15sp" /></RelativeLayout>
+        </LinearLayout>
+
+        <!-- [구역 4] 하단 파트너십 채널 격자 박스 Row 1 (3열 균등) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_marginTop="16dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:weightSum="3">
+            <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="horizontal"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🏠 " android:textSize="15sp"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="브랜드" android:textColor="#222222" android:textStyle="bold" android:textSize="14sp" /></LinearLayout>
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#F2F3F4"/>
+            <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="horizontal"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🍳 " android:textSize="15sp"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="쉐프" android:textColor="#222222" android:textStyle="bold" android:textSize="14sp" /></LinearLayout>
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#F2F3F4"/>
+            <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:orientation="horizontal"><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💼 " android:textSize="15sp"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="제휴/광고" android:textColor="#222222" android:textStyle="bold" android:textSize="14sp" /></LinearLayout>
+        </LinearLayout>
+
+        <!-- [구역 5] 공식 외부 SNS 링크 박스 Row 2 (3열 균등 소셜 존) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginTop="12dp"
+            android:background="#FFFFFF"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:paddingHorizontal="6dp" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📷" android:textSize="16sp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="만개의레시피\n인스타그램" android:textColor="#555555" android:textSize="10sp" android:gravity="center" />
+            </LinearLayout>
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#F2F3F4"/>
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:paddingHorizontal="6dp" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="▶️" android:textSize="16sp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="만개의레시피\n유튜브" android:textColor="#555555" android:textSize="10sp" android:gravity="center" />
+            </LinearLayout>
+            <View android:layout_width="1dp" android:layout_height="match_parent" android:background="#F2F3F4"/>
+
+            <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:paddingHorizontal="6dp" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="👥" android:textSize="16sp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="만개의레시피\n페이스북" android:textColor="#555555" android:textSize="10sp" android:gravity="center" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

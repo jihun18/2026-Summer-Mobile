@@ -1,11 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="24sp"
-        android:text="분류 화면" />
-</FrameLayout>
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="24dp"
+        android:paddingBottom="40dp">
+
+        <!-- 최상단 대타이틀 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="레시피 분류"
+            android:textColor="#111111"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+        <!-- ========================================== -->
+        <!-- [1구역] 종류별 카테고리                     -->
+        <!-- ========================================== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="👁️‍🗨️ 종류별 👁️‍🗨️" android:textColor="#111111" android:textSize="16sp" android:textStyle="bold" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="1dp"
+            app:cardUseCompatPadding="true">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:background="#EFEFEF"
+                android:padding="1dp">
+
+                <!-- 1열 가로 등분을 위해 columnWeight="1" 지정 -->
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="전체" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="밑반찬" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="메인반찬" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="국/탕" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="찌개" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="디저트" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="면/만두" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="밥/죽/떡" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="기타" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+            </GridLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ========================================== -->
+        <!-- [2구역] 상황별 카테고리                     -->
+        <!-- ========================================== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🍳 상황별 🍳" android:textColor="#111111" android:textSize="16sp" android:textStyle="bold" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="1dp"
+            app:cardUseCompatPadding="true">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:background="#EFEFEF"
+                android:padding="1dp">
+
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="일상" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="초스피드" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="손님접대" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="술안주" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="다이어트" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="도시락" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="간식" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="야식" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="기타" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+            </GridLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ========================================== -->
+        <!-- [3구역] 재료별 카테고리                     -->
+        <!-- ========================================== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🌾 재료별 🌾" android:textColor="#111111" android:textSize="16sp" android:textStyle="bold" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="1dp"
+            app:cardUseCompatPadding="true">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:background="#EFEFEF"
+                android:padding="1dp">
+
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="소고기" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="돼지고기" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="닭고기" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="채소류" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="해물류" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="달걀/유제품" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="가공식품" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="과일류" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="기타" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+            </GridLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- ========================================== -->
+        <!-- [4구역] 방법별 카테고리                     -->
+        <!-- ========================================== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_marginBottom="12dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🏺 방법별 🏺" android:textColor="#111111" android:textSize="16sp" android:textStyle="bold" />
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="14dp"
+            app:cardElevation="1dp"
+            app:cardUseCompatPadding="true">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="3"
+                android:background="#EFEFEF"
+                android:padding="1dp">
+
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="볶음" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="끓이기" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="부침" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="조림" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="무침" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="비빔" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="찜" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="튀김" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+                <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:background="#FFFFFF" android:gravity="center" android:padding="18dp" android:text="기타" android:textColor="#333333" android:textSize="14sp" android:layout_margin="0.5dp"/>
+            </GridLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

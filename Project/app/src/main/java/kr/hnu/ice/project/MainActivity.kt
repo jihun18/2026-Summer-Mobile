@@ -7,42 +7,38 @@ import kr.hnu.ice.project.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    // 1. Step 2에서 설정한 뷰바인딩(ViewBinding) 객체 선언
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        // 2. 뷰바인딩 초기화 및 레이아웃 설정 (findViewById를 대체)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(binding.root) // 화면에 뷰 바인딩 적용
 
-        // 3. 앱이 처음 켜졌을 때 기본 화면을 'HomeFragment'로 지정
-        if (savedInstanceState == null) {
-            changeFragment(HomeFragment())
-        }
-
-        // 4. 하단 탭 버튼 클릭 시 동작하는 리스너 설정
+        // 하단 내비게이션 바 아이템 클릭 리스너 설정
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_home -> {
-                    changeFragment(HomeFragment())
+                R.id.navigation_home -> {
+                    replaceFragment(HomeFragment())
                     true
                 }
-                R.id.nav_category -> {
-                    changeFragment(CategoryFragment())
+                R.id.navigation_category -> {
+                    // TODO: 분류(Category) 프래그먼트 생성 후 교체 예정
+                    replaceFragment(CategoryFragment())
                     true
                 }
-                R.id.nav_benefit -> {
-                    changeFragment(BenefitFragment())
+                R.id.navigation_benefits -> {
+                    // TODO: 혜택(Benefit) 프래그먼트 생성 후 교체 예정
+                    replaceFragment(BenefitFragment())
                     true
                 }
-                R.id.nav_scrap -> {
-                    changeFragment(ScrapFragment())
+                R.id.navigation_scrap -> {
+                    // TODO: 스크랩(Scrap) 프래그먼트 생성 후 교체 예정
+                    replaceFragment(ScrapFragment())
                     true
                 }
-                R.id.nav_my -> {
-                    changeFragment(MyFragment())
+                R.id.navigation_my -> {
+                    // TODO: MY 프래그먼트 생성 후 교체 예정
+                    replaceFragment(MyFragment())
                     true
                 }
                 else -> false
@@ -50,10 +46,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    // 5. main_container 영역에 프래그먼트를 동적으로 갈아끼우는 함수
-    private fun changeFragment(fragment: Fragment) {
+    // 화면을 부드럽게 갈아 끼워주는 공용 메서드 (FragmentTransaction)
+    private fun replaceFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.main_container, fragment)
+            .replace(R.id.main_fragment_container, fragment)
             .commit()
     }
 }
