@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+
+    <!-- [구역 1] 최상단 진짜 검색 바 (뒤로가기 + 입력창 + 돋보기 + 마이크) -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp">
+
+        <TextView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="←"
+            android:textColor="#111111"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:paddingRight="12dp" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/shape_search_background"
+            android:backgroundTint="#F2F2F2"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="12dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_search_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="요리, 재료 검색"
+                android:textColor="#222222"
+                android:textColorHint="#999999"
+                android:textSize="15sp"
+                android:inputType="text"
+                android:imeOptions="actionSearch"
+                android:privateImeOptions="defaultInputmode=korean"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/btn_search_action"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="🔍"
+            android:textSize="18sp"
+            android:layout_marginLeft="8dp" />
+
+        <TextView
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="🎤"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EFEFEF" />
+
+    <!-- 하단 스크롤 컨텐츠 구역 -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="40dp">
+
+            <!-- 1. 내가 본 분류 -->
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EFEFEF" android:layout_marginTop="24dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="내가 본 분류" android:textColor="#111111" android:textSize="14sp" android:textStyle="bold" android:layout_gravity="center_horizontal" android:layout_marginTop="-10dp" android:background="#FFFFFF" android:paddingHorizontal="12dp"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="16dp">
+                <LinearLayout android:layout_width="70dp" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical"><TextView android:layout_width="48dp" android:layout_height="48dp" android:background="@drawable/shape_circle" android:backgroundTint="#26A69A" android:text="🍚" android:gravity="center" android:textSize="20sp"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="밥/죽/떡" android:textColor="#444444" android:textSize="12sp"/></LinearLayout>
+                <LinearLayout android:layout_width="70dp" android:layout_height="wrap_content" android:layout_marginLeft="16dp" android:gravity="center" android:orientation="vertical"><TextView android:layout_width="48dp" android:layout_height="48dp" android:background="@drawable/shape_circle" android:backgroundTint="#29B6F6" android:text="🍳" android:gravity="center" android:textSize="20sp"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:text="일상" android:textColor="#444444" android:textSize="12sp"/></LinearLayout>
+            </LinearLayout>
+
+            <!-- 2. 추천 -->
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EFEFEF" android:layout_marginTop="28dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="추천" android:textColor="#111111" android:textSize="14sp" android:textStyle="bold" android:layout_gravity="center_horizontal" android:layout_marginTop="-10dp" android:background="#FFFFFF" android:paddingHorizontal="12dp"/>
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:chipSpacingHorizontal="8dp"
+                app:chipSpacingVertical="8dp"
+                android:gravity="center_horizontal">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="14dp" android:paddingVertical="8dp" android:text="간편요리" android:textColor="#444444" android:textSize="13sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="14dp" android:paddingVertical="8dp" android:text="한끼식사" android:textColor="#444444" android:textSize="13sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="14dp" android:paddingVertical="8dp" android:text="메인요리" android:textColor="#444444" android:textSize="13sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="14dp" android:paddingVertical="8dp" android:text="술안주" android:textColor="#444444" android:textSize="13sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="14dp" android:paddingVertical="8dp" android:text="요리초보" android:textColor="#444444" android:textSize="13sp"/>
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- 3. 실시간 검색어 -->
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EFEFEF" android:layout_marginTop="32dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="실시간 검색어" android:textColor="#111111" android:textSize="14sp" android:textStyle="bold" android:layout_gravity="center_horizontal" android:layout_marginTop="-10dp" android:background="#FFFFFF" android:paddingHorizontal="12dp"/>
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:chipSpacingHorizontal="8dp"
+                app:chipSpacingVertical="8dp"
+                android:gravity="center_horizontal">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="12dp" android:paddingVertical="8dp" android:text="1. 오이무침" android:textColor="#333333" android:textSize="13sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="12dp" android:paddingVertical="8dp" android:text="2. 오이냉국" android:textColor="#333333" android:textSize="13sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="12dp" android:paddingVertical="8dp" android:text="3. 제육볶음" android:textColor="#333333" android:textSize="13sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="12dp" android:paddingVertical="8dp" android:text="4. 닭볶음탕" android:textColor="#333333" android:textSize="13sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="12dp" android:paddingVertical="8dp" android:text="5. 감자전" android:textColor="#333333" android:textSize="13sp"/>
+            </com.google.android.material.chip.ChipGroup>
+
+            <!-- 4. 인기 검색어 -->
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#EFEFEF" android:layout_marginTop="32dp"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="인기 검색어" android:textColor="#111111" android:textSize="14sp" android:textStyle="bold" android:layout_gravity="center_horizontal" android:layout_marginTop="-10dp" android:background="#FFFFFF" android:paddingHorizontal="12dp"/>
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:chipSpacingHorizontal="8dp"
+                app:chipSpacingVertical="8dp"
+                android:gravity="center_horizontal">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="14dp" android:paddingVertical="8dp" android:text="오이무침" android:textColor="#444444" android:textSize="13sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="14dp" android:paddingVertical="8dp" android:text="닭볶음탕" android:textColor="#444444" android:textSize="13sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="14dp" android:paddingVertical="8dp" android:text="가지볶음" android:textColor="#444444" android:textSize="13sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="14dp" android:paddingVertical="8dp" android:text="된장찌개" android:textColor="#444444" android:textSize="13sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/shape_chip_gray" android:paddingHorizontal="14dp" android:paddingVertical="8dp" android:text="김치찌개" android:textColor="#444444" android:textSize="13sp"/>
+            </com.google.android.material.chip.ChipGroup>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</LinearLayout>

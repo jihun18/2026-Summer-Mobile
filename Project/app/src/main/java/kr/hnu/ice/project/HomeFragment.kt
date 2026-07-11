@@ -73,6 +73,13 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
                 .addToBackStack(null) // ★ 스마트폰 [뒤로가기] 버튼을 누르면 다시 홈 화면으로 복귀하도록 설정
                 .commit()
         }
+
+        binding.layoutSearchBarContainer.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.main_fragment_container, SearchFragment())
+                .addToBackStack(null) // 뒤로가기 누르면 다시 홈으로 복귀 가능하게 적재
+                .commit()
+        }
     }
 
     override fun onDestroyView() {

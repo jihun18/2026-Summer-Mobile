@@ -22,7 +22,9 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="12dp">
 
+            <!-- ★ [ID 추가 완료] 이 박스를 누르면 통합검색화면으로 전환됩니다 -->
             <LinearLayout
+                android:id="@+id/layout_search_bar_container"
                 android:layout_width="0dp"
                 android:layout_height="48dp"
                 android:layout_weight="1"
@@ -30,7 +32,10 @@
                 android:backgroundTint="#F2F2F2"
                 android:gravity="center_vertical"
                 android:paddingHorizontal="16dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -95,7 +100,7 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- [구역 3] ★ 가져온 진짜 고품질 아이콘 이미지 장착 구역 -->
+        <!-- [구역 3] 5대 메인 아이콘 장착 구역 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -110,7 +115,7 @@
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="오늘\n뭐먹지" android:gravity="center" android:textColor="#333333" android:textSize="12sp" />
             </LinearLayout>
 
-            <!-- 2. 냉장고 털기 (ID 유지 완료) -->
+            <!-- 2. 냉장고 털기 -->
             <LinearLayout android:id="@+id/btn_go_fridge" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:foreground="?android:attr/selectableItemBackground">
                 <ImageView android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/ic_refrig" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="냉장고\n털기" android:gravity="center" android:textColor="#333333" android:textStyle="bold" android:textSize="12sp" />
@@ -286,7 +291,7 @@
 
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:layout_marginHorizontal="16dp" android:orientation="vertical"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"><View android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/shape_circle" android:backgroundTint="#D3A27F"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:text="어린환자" android:textColor="#333333" android:textStyle="bold" android:textSize="13sp"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6dp" android:text="★ 5.0" android:textColor="#F2C94C" android:textStyle="bold" android:textSize="12sp"/></LinearLayout><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:background="@drawable/shape_search_background" android:backgroundTint="#FFFFFF" android:elevation="1dp" android:padding="12dp" android:orientation="horizontal"><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical"><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="다이어트 요리 토마토 계란볶음 딱!" android:textColor="#222222" android:textStyle="bold" android:textSize="14sp"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="부드러운 계란에 달큰한 양파와 토마토가 잘 어울리고 먹고 나서 속도..." android:textColor="#666666" android:textSize="13sp" android:maxLines="2" android:ellipsize="end"/></LinearLayout><View android:layout_width="65dp" android:layout_height="65dp" android:layout_marginLeft="12dp" android:background="@drawable/shape_recipe_placeholder"/></LinearLayout></LinearLayout>
 
-        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:layout_marginHorizontal="16dp" android:orientation="vertical"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"><View android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/shape_circle" android:backgroundTint="#E0E0E0"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:text="요리검색자" android:textColor="#333333" android:textStyle="bold" android:textSize="13sp"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6dp" android:text="★ 5.0" android:textColor="#F2C94C" android:textStyle="bold" android:textSize="12sp"/></LinearLayout><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:background="@drawable/shape_search_background" android:backgroundTint="#FFFFFF" android:elevation="1dp" android:padding="12dp" android:orientation="horizontal"><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical"><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="깻잎찜 만드는 법" android:textColor="#222222" android:textStyle="bold" android:textSize="14sp"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="정확한 계량과 요리시간 덕분에 성공했어요. 맵찔이라 고춧가루 절반만..." android:textColor="#666666" android:textSize="13sp" android:maxLines="2" android:ellipsize="end"/></LinearLayout><View android:layout_width="65dp" android:layout_height="65dp" android:layout_marginLeft="12dp" android:background="@drawable/shape_recipe_placeholder"/></LinearLayout></LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="16dp" android:layout_marginHorizontal="16dp" android:orientation="vertical"><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center_vertical"><View android:layout_width="26dp" android:layout_height="26dp" android:background="@drawable/shape_circle" android:backgroundTint="#E0E0E0"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:text="요리검색자" android:textColor="#333333" android:textStyle="bold" android:textSize="13sp"/><TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="6dp" android:text="★ 5.0" android:textColor="#F2C94C" android:textStyle="bold" android:textSize="12sp"/></LinearLayout><LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:background="@drawable/shape_search_background" android:backgroundTint="#FFFFFF" android:elevation="1dp" android:padding="12dp" android:orientation="horizontal"><LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical"><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:text="깻잎찜 만드는 법" android:textColor="#222222" android:textStyle="bold" android:textSize="14sp"/><TextView android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="정확한 계량 and 요리시간 덕분에 성공했어요. 맵찔이라 고춧가루 절반만..." android:textColor="#666666" android:textSize="13sp" android:maxLines="2" android:ellipsize="end"/></LinearLayout><View android:layout_width="65dp" android:layout_height="65dp" android:layout_marginLeft="12dp" android:background="@drawable/shape_recipe_placeholder"/></LinearLayout></LinearLayout>
 
         <!-- 6. 더 많은 요리 후기 보기 버튼 -->
         <LinearLayout

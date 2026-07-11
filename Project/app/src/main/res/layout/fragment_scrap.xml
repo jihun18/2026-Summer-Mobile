@@ -37,7 +37,7 @@
                 android:layout_height="3dp"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
-                android:background="#70A150" /> <!-- 스크랩 강조용 시그니처 바 -->
+                android:background="#70A150" />
         </RelativeLayout>
 
         <!-- 내폴더 탭 버튼 -->
@@ -63,7 +63,7 @@
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true"
                 android:background="#70A150"
-                android:visibility="invisible" /> <!-- 초기 상태는 비활성화 -->
+                android:visibility="invisible" />
         </RelativeLayout>
     </LinearLayout>
 
@@ -86,19 +86,22 @@
             android:padding="16dp"
             android:visibility="visible">
 
-            <!-- 스크랩 카드 행 (양파볶음밥 단독) -->
+            <!-- ★ [핵심 교정] 코틀린과 싱크를 맞추기 위해 정밀하게 이식된 양파볶음밥 터치 로우 ID -->
             <LinearLayout
+                android:id="@+id/layout_onion_recipe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center_vertical">
+                android:gravity="center_vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="110dp"
                     android:layout_height="110dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="0dp">
-                    <!-- 임시 볶음밥 색상 플레이스홀더 박스 -->
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -177,7 +180,6 @@
                             android:textColor="#555555"
                             android:textSize="11sp" />
                     </LinearLayout>
-                    <!-- 우하단 눈 모양 인디케이터 -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -196,7 +198,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:visibility="gone"> <!-- 초기엔 숨겨둠 -->
+            android:visibility="gone">
 
             <!-- 초록색 [새폴더] 추가 액션 상자 -->
             <RelativeLayout
