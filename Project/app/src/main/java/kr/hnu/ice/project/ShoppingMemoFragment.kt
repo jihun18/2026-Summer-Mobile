@@ -133,14 +133,11 @@ class ShoppingMemoFragment : Fragment() {
         val rowLayout = RelativeLayout(context).apply {
             layoutParams = LinearLayout.LayoutParams(
                 LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
+                dpToPx(48f) // 고정 높이 부여로 겹침 현상 방지
             ).apply {
-                // 💡 [밀착 고정] 상단 마진을 완전히 제거하여 헤더 선 바로 밑에 칼같이 챡 붙도록 수정했습니다!
                 setMargins(0, 0, 0, 0)
             }
-            // 위아래 미세 여백만 깔끔하게 보정
-            setPadding(dpToPx(4f), dpToPx(6f), dpToPx(4f), dpToPx(6f))
-            minimumHeight = dpToPx(48f)
+            setPadding(dpToPx(4f), 0, dpToPx(4f), 0)
             setBackgroundColor(Color.WHITE)
         }
 
