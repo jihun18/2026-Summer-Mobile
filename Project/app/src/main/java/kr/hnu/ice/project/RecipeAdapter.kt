@@ -22,6 +22,7 @@ class RecipeAdapter(private val recipeList: List<Recipe>) :
     override fun onBindViewHolder(holder: RecipeViewHolder, position: Int) {
         val item = recipeList[position]
 
+        holder.binding.ivRecipeImage.setImageResource(item.imageRes)
         // XML에 부여했던 ID를 통해 각각의 데이터를 매칭합니다.
         holder.binding.tvRecipeTitle.text = item.title
         holder.binding.tvRecipeRating.text = "${item.rating} (120)"

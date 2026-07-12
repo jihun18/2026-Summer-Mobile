@@ -127,7 +127,7 @@
                     android:foreground="?android:attr/selectableItemBackground">
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="👁️" android:textSize="20sp" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:text="내가 본 레시피" android:textColor="#444444" android:textSize="12sp" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="1" android:textColor="#A27D54" android:textStyle="bold" android:textSize="13sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="3" android:textColor="#A27D54" android:textStyle="bold" android:textSize="13sp" />
                 </LinearLayout>
 
                 <!-- 2. 스크랩 -->

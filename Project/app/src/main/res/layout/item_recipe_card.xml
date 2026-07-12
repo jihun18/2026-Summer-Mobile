@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="140dp"
     android:layout_height="wrap_content"
     android:layout_marginRight="12dp"
     android:orientation="vertical">
 
-    <!-- 음식 사진 영역 (둥근 모서리 임시 박스) -->
-    <View
+    <!-- 💡 [수정] View를 ImageView로 바꾸고 ID를 ivRecipeImage로 매칭 -->
+    <ImageView
+        android:id="@+id/ivRecipeImage"
         android:layout_width="140dp"
         android:layout_height="140dp"
-        android:background="@drawable/shape_recipe_placeholder" />
+        android:scaleType="centerCrop"
+        android:background="@drawable/shape_recipe_placeholder"
+        tools:src="@drawable/ic_chadol" />
 
-    <!-- 1. 레시피 제목 (id: tv_recipe_title 추가됨) -->
+    <!-- 1. 레시피 제목 -->
     <TextView
         android:id="@+id/tv_recipe_title"
         android:layout_width="match_parent"
@@ -24,7 +28,7 @@
         android:textSize="14sp"
         android:textStyle="bold" />
 
-    <!-- 2. 별점 및 평점 (id: tv_recipe_rating 추가됨) -->
+    <!-- 2. 별점 및 평점 -->
     <TextView
         android:id="@+id/tv_recipe_rating"
         android:layout_width="wrap_content"

@@ -62,7 +62,7 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- 1. 다이어트 양파볶음밥 행 (터치 시 상세화면 점프 연동용 ID 부여) -->
+            <!-- 1. 다이어트 양파볶음밥 행 -->
             <LinearLayout
                 android:id="@+id/layout_recipe_onion"
                 android:layout_width="match_parent"
@@ -79,10 +79,11 @@
                     android:layout_height="110dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="0dp">
-                    <View
+                    <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#F5D0A9" />
+                        android:src="@drawable/ic_yangpa"
+                        android:scaleType="centerCrop" />
                 </androidx.cardview.widget.CardView>
 
                 <RelativeLayout
@@ -156,10 +157,11 @@
                     android:layout_height="110dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="0dp">
-                    <View
+                    <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#D1F2EB" />
+                        android:src="@drawable/ic_gamja"
+                        android:scaleType="centerCrop" />
                 </androidx.cardview.widget.CardView>
 
                 <RelativeLayout
@@ -233,10 +235,11 @@
                     android:layout_height="110dp"
                     app:cardCornerRadius="12dp"
                     app:cardElevation="0dp">
-                    <View
+                    <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#FCF3CF" />
+                        android:src="@drawable/ic_gamja2"
+                        android:scaleType="centerCrop" />
                 </androidx.cardview.widget.CardView>
 
                 <RelativeLayout
@@ -300,7 +303,7 @@
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <!-- [구역 3] 최하단 피치핑크 쇼핑몰 배너 상자 광고판 구역 -->
+    <!-- [구역 3] 최하단 피치핑크 쇼핑몰 배너 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="56dp"

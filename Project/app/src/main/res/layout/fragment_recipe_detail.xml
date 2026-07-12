@@ -48,7 +48,12 @@
 
             <!-- 이미지 1 구역: 대표 요리 사진 + 타이틀 + 셰프 프로필 -->
             <RelativeLayout android:layout_width="match_parent" android:layout_height="320dp">
-                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="#F5D0A9" />
+                <ImageView
+                    android:id="@+id/iv_recipe_main"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_yangpa"
+                    android:scaleType="centerCrop" />
                 <TextView android:layout_width="36dp" android:layout_height="36dp" android:layout_alignParentLeft="true" android:layout_alignParentBottom="true" android:layout_margin="16dp" android:background="@drawable/shape_circle" android:backgroundTint="#44000000" android:text="👜" android:gravity="center"/>
             </RelativeLayout>
 

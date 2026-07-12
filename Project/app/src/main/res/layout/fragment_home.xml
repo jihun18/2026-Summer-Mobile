@@ -22,7 +22,6 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="12dp">
 
-            <!-- 통합검색화면 진입용 컨테이너 -->
             <LinearLayout
                 android:id="@+id/layout_search_bar_container"
                 android:layout_width="0dp"
@@ -43,22 +42,24 @@
                     android:text="요리, 재료 검색"
                     android:textColor="#999999"
                     android:textSize="15sp" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="🎤"
-                    android:textSize="18sp" />
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:src="@drawable/ic_mic" />
             </LinearLayout>
 
-            <TextView
+            <ImageView
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginLeft="12dp"
                 android:background="@drawable/shape_search_background"
                 android:backgroundTint="#F2F2F2"
-                android:gravity="center"
-                android:text="📖"
-                android:textSize="20sp" />
+                android:src="@drawable/ic_book"
+                android:scaleType="centerInside"
+                android:padding="11dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:foreground="?android:attr/selectableItemBackground"/>
         </LinearLayout>
 
         <!-- [구역 2] 메인 공모전 배너 -->
@@ -100,7 +101,7 @@
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- [구역 3] 5대 메인 아이콘 장착 구역 -->
+        <!-- [구역 3] 기본 5개 아이콘 -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -110,45 +111,106 @@
             android:weightSum="5">
 
             <!-- 1. 오늘 뭐먹지 -->
-            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:foreground="?android:attr/selectableItemBackground">
                 <ImageView android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/ic_todayeat" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="오늘\n뭐먹지" android:gravity="center" android:textColor="#333333" android:textSize="12sp" />
             </LinearLayout>
 
             <!-- 2. 냉장고 털기 -->
-            <LinearLayout android:id="@+id/btn_go_fridge" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:foreground="?android:attr/selectableItemBackground">
+            <LinearLayout android:id="@+id/btn_go_fridge" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:foreground="?android:attr/selectableItemBackground">
                 <ImageView android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/ic_refrig" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="냉장고\n털기" android:gravity="center" android:textColor="#333333" android:textStyle="bold" android:textSize="12sp" />
             </LinearLayout>
 
             <!-- 3. 출석 포인트 -->
-            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:foreground="?android:attr/selectableItemBackground">
                 <ImageView android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/ic_point" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="출석\n포인트" android:gravity="center" android:textColor="#333333" android:textSize="12sp" />
             </LinearLayout>
 
-            <!-- ★ 4. 장보기 메모 [연동 ID 및 피드백 주입 완료] -->
+            <!-- 4. 장보기 메모 -->
             <LinearLayout android:id="@+id/btn_go_shopping_memo" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:foreground="?android:attr/selectableItemBackground">
                 <ImageView android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/ic_shopmemo" />
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="장보기\n메모" android:gravity="center" android:textColor="#333333" android:textStyle="bold" android:textSize="12sp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="장보기\n메모" android:gravity="center" android:textColor="#333333" android:textSize="12sp" />
             </LinearLayout>
 
             <!-- 5. 할인정보 -->
-            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:foreground="?android:attr/selectableItemBackground">
                 <ImageView android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/ic_saleinform" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="할인정보" android:gravity="center" android:textColor="#333333" android:textSize="12sp" />
             </LinearLayout>
         </LinearLayout>
 
+        <!-- [신규 구역] 전체보기 클릭 시 나타날 추가 아이콘들 -->
+        <LinearLayout
+            android:id="@+id/layout_more_icons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- 추가 줄 1 (명예의전당, 랭킹, 요리후기, 최신레시피, 쉐프) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="24dp"
+                android:layout_marginHorizontal="16dp"
+                android:weightSum="5">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:foreground="?android:attr/selectableItemBackground">
+                    <ImageView android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/ic_top" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="명예의\n전당" android:gravity="center" android:textColor="#333333" android:textSize="12sp" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:foreground="?android:attr/selectableItemBackground">
+                    <ImageView android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/ic_rank" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="랭킹" android:gravity="center" android:textColor="#333333" android:textSize="12sp" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:foreground="?android:attr/selectableItemBackground">
+                    <ImageView android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/ic_review" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="요리\n후기" android:gravity="center" android:textColor="#333333" android:textSize="12sp" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:foreground="?android:attr/selectableItemBackground">
+                    <ImageView android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/ic_new" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="최신\n레시피" android:gravity="center" android:textColor="#333333" android:textSize="12sp" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:foreground="?android:attr/selectableItemBackground">
+                    <ImageView android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/ic_chef" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="쉐프" android:gravity="center" android:textColor="#333333" android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- 추가 줄 2 (매거진) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="24dp"
+                android:layout_marginHorizontal="16dp"
+                android:weightSum="5">
+                <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:orientation="vertical" android:clickable="true" android:focusable="true" android:foreground="?android:attr/selectableItemBackground">
+                    <ImageView android:layout_width="50dp" android:layout_height="50dp" android:src="@drawable/ic_mag" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="매거진" android:gravity="center" android:textColor="#333333" android:textSize="12sp" />
+                </LinearLayout>
+                <View android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                <View android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                <View android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+                <View android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+
         <!-- [구역 3-1] 전체보기 ∨ -->
         <TextView
+            android:id="@+id/btn_view_all"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
+            android:padding="8dp"
             android:text="전체보기 ∨"
             android:textColor="#888888"
-            android:textSize="13sp" />
+            android:textSize="13sp"
+            android:clickable="true"
+            android:focusable="true" />
 
         <!-- [구역 4] 하단 보라색 쿠팡 가격 추적 배너 -->
         <androidx.cardview.widget.CardView
