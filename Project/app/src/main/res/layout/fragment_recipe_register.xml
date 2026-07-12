@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- [구역 1] 최상단 고정 툴바 -->
+    <RelativeLayout
+        android:id="@+id/register_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:paddingHorizontal="16dp">
+        <TextView
+            android:id="@+id/btn_back"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:text="←"
+            android:textColor="#111111"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="내가 쓴 레시피"
+            android:textColor="#111111"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <!-- [구역 2] 공개중 / 작성중 상단 탭 레이아웃 바 -->
+    <LinearLayout
+        android:id="@+id/layout_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_below="@id/register_toolbar"
+        android:orientation="horizontal"
+        android:weightSum="2">
+        <RelativeLayout
+            android:id="@+id/tab_public"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tv_tab_public"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="공개중"
+                android:textColor="#70A150"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+            <View
+                android:id="@+id/indicator_public"
+                android:layout_width="120dp"
+                android:layout_height="3dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#70A150" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/tab_draft"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tv_tab_draft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="작성중"
+                android:textColor="#888888"
+                android:textSize="16sp" />
+            <View
+                android:id="@+id/indicator_draft"
+                android:layout_width="120dp"
+                android:layout_height="3dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:background="#70A150"
+                android:visibility="invisible" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/tab_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#EFEFEF"
+        android:layout_below="@id/layout_tab_bar" />
+
+    <!-- 최하단 레시피 등록하기 녹색 버튼 고정 박스 -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_bottom_register"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        android:layout_alignParentBottom="true"
+        android:background="#70A150"
+        android:text="레시피 등록하기"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <!-- 중단 본문 스크롤 공간 -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tab_divider"
+        android:layout_above="@id/btn_bottom_register"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:gravity="center_horizontal">
+
+            <!-- 1. 등록된 레시피 없음 경고 엠프티 컴포넌트 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="28dp">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="🚫"
+                    android:textSize="55sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="등록된 레시피가 없네요!"
+                    android:textColor="#333333"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="자랑하고 싶은 나만의 레시피!\n공유하고 싶은 멋진 레시피를 올려 주세요."
+                    android:textColor="#888888"
+                    android:textSize="13sp"
+                    android:gravity="center"
+                    android:lineSpacingExtra="3dp" />
+            </LinearLayout>
+
+            <!-- 2. 혜택 카드 1 (첫 레시피 등록 혜택) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@drawable/shape_benefit_card"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="12dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="첫 레시피 등록 혜택"
+                        android:textColor="#70A150"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="첫 레시피 등록하고,\n커피 기프트콘 받아가세요"
+                        android:textColor="#333333"
+                        android:textSize="13sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:text="☕☕"
+                    android:textSize="32sp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <!-- 3. 혜택 카드 2 (만개의레시피 쉐프 혜택) -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="135dp"
+                android:background="@drawable/shape_benefit_card"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="16dp"
+                android:layout_marginBottom="20dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="만개의레시피 쉐프 혜택"
+                        android:textColor="#70A150"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="레시피 20개 등록하고,\n만개의레시피 쉐프 신청하세요"
+                        android:textColor="#333333"
+                        android:textSize="13sp"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="28dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/shape_search_background"
+                        android:backgroundTint="#70A150"
+                        android:text="쉐프혜택보기 ➔"
+                        android:textColor="#FFFFFF"
+                        android:gravity="center"
+                        android:textSize="11sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="65dp"
+                    android:layout_height="wrap_content"
+                    android:text="🐣🍳"
+                    android:textSize="32sp"
+                    android:gravity="center"/>
+            </LinearLayout>
+
+            <!-- 4. 하단 주의사항 안내 박스 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F4F5F6"
+                android:orientation="vertical"
+                android:padding="14dp"
+                android:layout_marginBottom="20dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="[레시피 등록안내]"
+                    android:textColor="#111111"
+                    android:textStyle="bold"
+                    android:textSize="13sp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="등록된 레시피가 이용하기에 부적합한 경우, 레시피 노출이 제한 될 수 있습니다"
+                    android:textColor="#666666"
+                    android:textSize="12sp"
+                    android:lineSpacingExtra="2dp"/>
+            </LinearLayout>
+
+            <!-- 5. 고객센터 문의하기 버튼 -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_customer_center"
+                android:layout_width="180dp"
+                android:layout_height="40dp"
+                android:background="@drawable/shape_white_btn_border"
+                android:text="고객센터 문의하기"
+                android:textColor="#444444"
+                android:textSize="13sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</RelativeLayout>
