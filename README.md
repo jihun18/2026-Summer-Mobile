@@ -3,3 +3,6 @@
 ## 이름: 전지훈
 ## Email: joenjihun1018@gmail.com
 --
+
+프로젝트 영상
+https://drive.google.com/file/d/1o5NHW_eyJWJjNoSNvZKXPErpPHvf3ZzA/view?usp=sharing
