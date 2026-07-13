@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>스마트 레시피 & 냉장고 관리 앱 프로젝트</title>
+    <title>만개의 레시피 벤치마칭 앱 프로젝트</title>
     <style>
         @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
@@ -36,7 +36,7 @@
             background: #ffffff;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            padding: 50px;
+            padding: 60px;
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
@@ -53,78 +53,67 @@
 
         /* 슬라이드 내부 레이아웃 */
         .slide-header {
-            margin-bottom: 30px;
+            margin-bottom: 40px;
             border-bottom: 3px solid #70A150;
             padding-bottom: 15px;
         }
 
         .slide-header h2 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: #111;
         }
 
         .slide-content {
             display: flex;
             flex: 1;
-            gap: 40px;
-            align-items: center;
+            align-items: flex-start;
+            padding-top: 20px;
         }
 
         .slide-content.center {
             justify-content: center;
+            align-items: center;
             text-align: center;
             flex-direction: column;
+            padding-top: 0;
         }
 
         .text-area {
-            flex: 1;
-            font-size: 1.5rem;
+            width: 100%;
+            font-size: 1.8rem;
             line-height: 1.8;
         }
 
         .text-area ul {
-            margin-left: 30px;
-            margin-bottom: 20px;
+            margin-left: 40px;
+            margin-bottom: 25px;
         }
 
         .text-area li {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .text-area li strong {
             color: #70A150;
-        }
-
-        .image-placeholder {
-            flex: 1;
-            height: 100%;
-            background-color: #EFEFEF;
-            border: 2px dashed #CCC;
-            border-radius: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #888;
-            font-weight: bold;
-            font-size: 1.2rem;
-            text-align: center;
-            padding: 20px;
+            font-size: 2rem;
+            display: inline-block;
+            margin-bottom: 10px;
         }
 
         /* 첫 번째 슬라이드 전용 */
         .title-slide h1 {
-            font-size: 4rem;
+            font-size: 4.5rem;
             color: #111;
             margin-bottom: 20px;
         }
         .title-slide h3 {
-            font-size: 2rem;
+            font-size: 2.2rem;
             color: #666;
             margin-bottom: 50px;
             font-weight: 500;
         }
         .title-slide p {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             color: #70A150;
             font-weight: bold;
         }
@@ -207,9 +196,6 @@
                         </li>
                     </ul>
                 </div>
-                <div class="image-placeholder">
-                    [ MainActivity 위에서 Fragment들이<br>교체되는 다이어그램 이미지 배치 ]
-                </div>
             </div>
         </div>
 
@@ -219,19 +205,16 @@
                 <h2>메인 탐색 & 검색 영역</h2>
             </div>
             <div class="slide-content">
-                <div class="image-placeholder">
-                    [ 홈, 분류, 검색 화면 캡처 3장 나란히 배치 ]
-                </div>
                 <div class="text-area">
                     <ul>
                         <li><strong>홈 화면 (<code>HomeFragment</code>)</strong><br>
-                            앱의 메인 대시보드. 추천 레시피 등에 <strong>캐러셀(가로 스크롤) UI</strong>(RecyclerView HORIZONTAL) 적용
-                        </li>
-                        <li><strong>분류 화면 (<code>CategoryFragment</code>)</strong><br>
-                            밥, 국, 면 등 요리 종류 및 상황별 필터링
+                            앱의 메인 대시보드. 추천 레시피 등에 캐러셀(가로 스크롤) UI 적용
                         </li>
                         <li><strong>검색 화면 (<code>SearchFragment</code>)</strong><br>
-                            실시간 키워드 검색 및 '내가 본 분류' 위젯 제공
+                            실시간 키워드 검색 및 '내가 본 분류' 위젯을 통한 직관적인 검색 지원
+                        </li>
+                        <li><strong>분류 화면 (<code>CategoryFragment</code>)</strong><br>
+                            밥, 국, 면 등 요리 종류 및 상황별 필터링 기능 제공
                         </li>
                     </ul>
                 </div>
@@ -244,19 +227,16 @@
                 <h2>레시피 상세 & 기록 관리</h2>
             </div>
             <div class="slide-content">
-                <div class="image-placeholder">
-                    [ 레시피 상세, 최근 본 레시피, 스크랩 화면 캡처 배치 ]
-                </div>
                 <div class="text-area">
                     <ul>
                         <li><strong>상세 화면 (<code>RecipeDetailFragment</code>)</strong><br>
-                            재료, 조리 순서, 팁 등 세부 정보 출력
-                        </li>
-                        <li><strong>최근 본 레시피 (<code>RecentViewFragment</code>)</strong><br>
-                            사용자의 상세 열람 히스토리 자동 정렬 기록
+                            특정 요리의 재료, 조리 순서, 팁 등 세부 정보 출력
                         </li>
                         <li><strong>스크랩 화면 (<code>ScrapFragment</code>)</strong><br>
                             마음에 드는 레시피를 보관하는 나만의 요리책 공간
+                        </li>
+                        <li><strong>최근 본 레시피 (<code>RecentViewFragment</code>)</strong><br>
+                            사용자의 상세 열람 히스토리를 시간순으로 자동 정렬하여 표시
                         </li>
                     </ul>
                 </div>
@@ -269,13 +249,10 @@
                 <h2>스마트 요리 유틸리티</h2>
             </div>
             <div class="slide-content">
-                <div class="image-placeholder">
-                    [ 냉장고 털기, 장보기 메모 화면 캡처 배치 ]
-                </div>
                 <div class="text-area">
                     <ul>
                         <li><strong>냉장고 화면 (<code>FridgeFragment</code>)</strong><br>
-                            스마트폰 속 가상 냉장고 인벤토리 (재료 등록/삭제 관리)
+                            스마트폰 속 가상 냉장고 인벤토리 (재료 등록/삭제 및 관리)
                         </li>
                         <li><strong>장보기 메모 (<code>ShoppingMemoFragment</code>)</strong><br>
                             레시피 기반 스마트 장보기 체크리스트
@@ -294,9 +271,6 @@
                 <h2>사용자 참여 & 혜택 기능</h2>
             </div>
             <div class="slide-content">
-                <div class="image-placeholder">
-                    [ 레시피 등록, 혜택, 마이페이지 화면 캡처 배치 ]
-                </div>
                 <div class="text-area">
                     <ul>
                         <li><strong>레시피 등록 (<code>RecipeRegisterFragment</code>)</strong><br>
@@ -368,3 +342,5 @@
 </body>
 </html>
 ```eof
+
+폰트 사이즈와 여백(padding)을 키워서 이미지가 없어도 화면이 허전해 보이지 않고 글씨가 눈에 잘 들어오도록 CSS를 조정했습니다. 깃허브에 반영해서 확인해 보세요!
